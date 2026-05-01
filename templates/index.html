@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Image Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- LANDING -->
+<div class="landing" id="landing">
+
+    <div class="center-box">
+
+        <h1>Detect AI-Generated Images in Seconds</h1>
+        <p>
+            Upload an image to check if it’s real or AI-generated.
+            Supports DALL·E, Midjourney, Stable Diffusion and more.
+        </p>
+
+        <div class="upload-box" id="uploadBox" onclick="triggerFile()">
+            <div id="uploadContent">
+                <p>Drag & Drop Image</p>
+                <span>or click to upload</span>
+            </div>
+            <img id="uploadPreview" class="hidden-preview">
+        </div>
+
+        <input type="file" id="imageInput" hidden>
+        <button onclick="uploadImage()" class="btn">Analyze Image</button>
+
+    </div>
+</div>
+
+<!-- RESULT PAGE -->
+<div class="result-page hidden" id="resultPage">
+
+    <!-- LEFT IMAGE -->
+    <div class="image-section">
+        <div id="preview"></div>
+    </div>
+
+    <!-- RIGHT RESULTS -->
+    <div class="result-panel">
+
+        <!-- ALERT -->
+        <div id="resultAlert" class="alert-box"></div>
+
+        <!-- AI SCORE -->
+        <div class="score-card">
+            <div class="score-header">
+                <span id="aiScore">0%</span>
+                <span class="score-label">AI-Generated</span>
+            </div>
+            <div class="progress-bar">
+                <div id="aiBar" class="progress-fill red"></div>
+            </div>
+        </div>
+
+        <!-- REAL SCORE -->
+        <div class="score-card">
+            <div class="score-header">
+                <span id="realScore">0%</span>
+                <span class="score-label">Real</span>
+            </div>
+            <div class="progress-bar">
+                <div id="realBar" class="progress-fill green"></div>
+            </div>
+        </div>
+
+        <!-- SOURCES -->
+        <div class="sources-box">
+            <h4>Generation Sources</h4>
+
+            <div class="source-main">
+                <span>AI-Generated</span>
+                <span id="aiTotal"></span>
+            </div>
+
+            <div id="sourceTags" class="tags"></div>
+        </div>
+        <div class="sources-box">
+            <h4>Metadata Signals</h4>
+            <div id="metadataBox"></div>
+        </div>        
+
+        <button onclick="resetApp()" class="back-btn">Try Another</button>
+
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

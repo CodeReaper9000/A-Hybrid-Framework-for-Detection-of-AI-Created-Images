@@ -1,0 +1,47 @@
+# =========================
+# Virtual Environments
+# =========================
+env/
+.venv/
+venv/
+ENV/
+
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =========================
+# PyTorch / ML Models
+# =========================
+*.pth
+*.pt
+*.ckpt
+
+# =========================
+# Runtime / uploads
+# =========================
+uploads/
+
+# =========================
+# Outputs / logs / results
+# =========================
+test scores/
+*.log
+
+# =========================
+# Presentations (optional)
+# =========================
+Presentation/
+Presentations/
+
+# =========================
+# OS / IDE junk
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
